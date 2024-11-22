@@ -1,0 +1,121 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.typing{
+  
+  font-size: 0.8rem;
+}
+
+.hide-div{
+  
+  display: none;
+}
+
+.hide-div .written{
+  background-image: url('../public/imgs/descSpace2.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 8px;
+  text-align: start;
+  overflow: hidden;
+  overflow-y: auto;
+  width: calc(527px/1.7) !important;
+  height: calc(296px/1.7);
+  color: #7e815b;
+  font-size: 1.2rem;
+  align-content: center;
+  
+}
+
+@media  (max-width: 1199px) {
+  .hide-div{
+    display: block;
+    height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-image: url('../public/imgs/pat1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2000;
+  }
+
+  .hidden-card{
+    display: inline-block !important;
+  width: 300px !important;
+  transition: all 0.5s ease !important;
+  border: none !important;
+    
+  }
+
+  .hidden-card-title {
+    top: 5% !important;
+    left: 9%;
+    font-size: 1rem;
+    font-weight: 800 !important;
+    color: azure !important;
+    text-shadow: 1px 1px 5px black !important;
+  }
+  
+  .hidden-card-img {
+    width: 76% !important;
+    height: 52.5%;
+    border: none !important;
+    top: 18.3% !important;
+    left: 12.1% !important;
+    border-radius: 0px !important;
+  }
+  
+  .hidden-card-text {
+    text-align: start;
+    width: 82% !important;
+    top: 76% !important;
+    left: 9% !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+}

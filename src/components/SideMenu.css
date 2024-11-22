@@ -1,0 +1,30 @@
+.SideMenu {
+  padding-top: 5vh;
+  height: 100vh !important;
+  background-image: url(../../public/imgs/pat1.jpg);
+  background-color: #d8ccaa;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.description {
+  background-image: url(../../public/imgs/descSpace2.png);
+  opacity: 0.8;
+  padding: 8px;
+  text-align: start;
+  overflow: hidden;
+  overflow-y: auto;
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: calc(527px/1.5) !important;
+  height: calc(296px/1.5);
+}
+.description::-webkit-scrollbar {
+  display: none;
+}
+.description p {
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  color: black !important;
+  
+}

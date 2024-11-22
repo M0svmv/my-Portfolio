@@ -1,0 +1,6 @@
+.floorSide {
+  height: 100%;
+}
+.floorSideLeft {
+  rotate: 180deg;
+}
