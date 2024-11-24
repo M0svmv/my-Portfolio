@@ -147,12 +147,7 @@ function CardsProvider({ children }) {
     const fetchRepositories = async () => {
       try {
         const response = await Axios.get(
-          "https://api.github.com/users/m0svmv/repos",
-          {
-            headers: {
-              Authorization: `Bearer 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`,
-            },
-          }
+          "https://api.github.com/users/m0svmv/repos"
         );
 
         const formattedProjects = response.data.map((repo) => ({
