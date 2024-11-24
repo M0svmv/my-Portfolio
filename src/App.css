@@ -117,5 +117,27 @@
     font-size: 0.9rem;
     font-weight: 500;
   }
+.social-icons .icon-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #f0f0f0; /* Light gray background */
+  border-radius: 50%; /* Makes the background circular */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons .icon-circle img {
+  width: 30px;
+  height: 30px;
+}
+
+.social-icons .icon-circle:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  background-color: #d1e7dd; /* Change to a light green on hover */
+}
+
   
 }
