@@ -1,7 +1,8 @@
-import Card from "./card";
-import SideCard from "./SideCard";
+import { useContext } from "react";
+import { cardsContext } from "../Context/CardsContext";
 
 function HideDiv() {
+  const { profile } = useContext(cardsContext);
   return (
     <>
       <div className="hide-div d-flex justify-content-center flex-column gap-3 align-items-center">
@@ -17,7 +18,7 @@ function HideDiv() {
             Mohammed Osama
           </h5>
           <img
-            src="./imgs/MohammedOsama2.jpg"
+            src={profile}
             className="position-absolute hidden-card-img"
             alt=""
           />
