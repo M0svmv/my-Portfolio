@@ -139,7 +139,8 @@
   background-color: #d1e7dd; /* Change to a light green on hover */
 }
 .main-app{
-    display: none;
+    display: none!important;
+    width:0!important;
   }
   
 }
