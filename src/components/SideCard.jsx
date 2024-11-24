@@ -10,7 +10,7 @@ function SideCard() {
   useEffect( () => {
     if (sideCard.desc) {async function updateDescription() {
       setCurrentDesc(""); // Clear the current description
-      await setTimeout(() => setCurrentDesc(" ."+sideCard.desc+". "), 0); // Add delay before updating
+      await setTimeout(() => setCurrentDesc(" . "+sideCard.desc+". "), 0); // Add delay before updating
     }
     updateDescription();}
   }, [sideCard.desc]);
