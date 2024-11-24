@@ -40,7 +40,7 @@ function SideCard() {
       </a>
       <br />
       <div className="d-flex description justify-content-center flex-wrap flex-row gap-3">
-        {currentDesc && <TypingEffect text={currentDesc} speed={70} />}
+        {currentDesc && <TypingEffect text={currentDesc} speed={50} />}
       </div>
     </>
   );
