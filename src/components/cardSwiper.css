@@ -36,8 +36,8 @@ body {
 }
 
 .swiper {
-  width: 300px;
-  height: 435px;
+  width: calc(300px/1.1);
+  height: calc(435px/1.1);
 }
 
 .swiper-slide {

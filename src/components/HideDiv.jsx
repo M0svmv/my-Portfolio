@@ -4,11 +4,10 @@ import CardSwiper from "./CardSwiper";
 function HideDiv() {
   return (
     <>
-      <div className="hide-div d-flex justify-content-center flex-column gap-3 align-items-center">
-        <CardSwiper />
+      <div className="hide-div d-flex justify-content-center flex-column gap-3 align-items-center pt-5">
+        <CardSwiper className="" />
 
         <div className="text-center written typing  position-relative">
-          
           <TypingEffect
             text={"S wipe the cards to start playing. Click any card"}
             speed={40}
@@ -17,7 +16,7 @@ function HideDiv() {
         </div>
 
         {/* Social Connect Icons */}
-        <div className="social-icons d-flex justify-content-center gap-4 mt-4">
+        <div className="social-icons d-flex justify-content-center gap-4 mt-2">
           <a
             href="https://www.linkedin.com/in/mohamed-osama3000/"
             target="_blank"
