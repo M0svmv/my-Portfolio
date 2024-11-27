@@ -76,7 +76,7 @@ export default function CardSwiper() {
                 className="position-absolute hidden-card-img"
                 alt={card.title}
               />
-              <p className="hidden-card-text position-absolute text-center text-black">
+              <p className="hidden-card-text position-absolute text-center text-black ">
                 {card.text ||
                   "Hello, I'm Mohammed Osama, a Front-End Developer."}
               </p>
@@ -111,7 +111,7 @@ export default function CardSwiper() {
                 className="position-absolute hidden-card-img"
                 alt={card.title}
               />
-              <p className="hidden-card-text position-absolute text-center text-black">
+              <p className="hidden-card-text position-absolute text-center text-black pt-2">
                 {card.text ||
                   "Hello, I'm Mohammed Osama, a Front-End Developer."}
               </p>
