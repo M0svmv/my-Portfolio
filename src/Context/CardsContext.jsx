@@ -137,10 +137,18 @@ function CardsProvider({ children }) {
   const handleSkillsUpdate = () => {
     setCardPlayed(skills);
   };
+  const handleSwiperSkillsUpdate = () => { 
+
+  }
 
   const handleContactUpdate = () => {
     setCardPlayed(social);
   };
+
+  const handleSwiperContactUpdate = () => { 
+
+  }
+
 
   const handleProjectsUpdate = async () => {
     try {
@@ -160,6 +168,9 @@ function CardsProvider({ children }) {
       console.error("Error fetching GitHub repositories:", error);
     }
   };
+  const handleSwiperProjectsUpdate = () => {
+    
+  }
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -181,6 +192,8 @@ function CardsProvider({ children }) {
       text: "I'm Mohammed Osama, a Frontend developer.",
       cardImg: "./imgs/card6.jpg",
       handleCards: () => handleCvUpdate(),
+      handleSwiper: () => handleCvUpdate(),
+      
       desc: `As a computer engineering student interested in several areas, particularly web development and AI.`,
     },
     {
@@ -189,6 +202,7 @@ function CardsProvider({ children }) {
       text: "Know more about my skills!!",
       cardImg: "./imgs/card3.jpg",
       handleCards: () => handleSkillsUpdate(),
+      handleSwiper: () => handleSwiperSkillsUpdate(),
       desc: "Choose a skill to display it on the screen.",
     },
     {
@@ -197,6 +211,7 @@ function CardsProvider({ children }) {
       text: "See my projects!!",
       cardImg: "./imgs/card4.jpg",
       handleCards: () => handleProjectsUpdate(),
+      handleSwiper: () => handleSwiperProjectsUpdate(),
       desc: "Choose a project to view it.",
     },
     {
@@ -205,6 +220,7 @@ function CardsProvider({ children }) {
       text: "Contact me!!",
       cardImg: "./imgs/card2.jpg",
       handleCards: () => handleContactUpdate(),
+      handleSwiper: () => handleSwiperContactUpdate(),
       desc: "Choose a contact option.",
     },
   ]);

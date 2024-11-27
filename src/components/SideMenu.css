@@ -15,9 +15,9 @@
   overflow: hidden;
   overflow-y: auto;
   background-repeat: no-repeat;
-  background-size:cover;
-  width: calc(527px/1.5) !important;
-  height: calc(296px/1.5);
+  background-size: cover;
+  width: calc(527px / 1.5) !important;
+  height: calc(296px / 1.5);
 }
 .description::-webkit-scrollbar {
   display: none;
@@ -26,7 +26,6 @@
   font-size: 0.8rem !important;
   font-weight: 500 !important;
   color: black !important;
-  
 }
 
 @media screen and (max-width: 1410px) {
