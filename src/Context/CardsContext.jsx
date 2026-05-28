@@ -39,31 +39,94 @@ function CardsProvider({ children }) {
       img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       text: "React.JS",
       cardImg: "./imgs/card7.jpg",
-    },
+    },{
+  title: "Redux",
+  img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+  text: "Redux",
+  cardImg: "./imgs/card3.jpg",
+},
+{
+      title: "SQL",
+      img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      text: "SQL",
+      cardImg: "./imgs/card2.jpg",
+    },{
+  title: "MongoDB",
+  img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  text: "MongoDB",
+  cardImg: "./imgs/card4.jpg",
+}
+,
+{
+  title: "Mongoose",
+  img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  text: "Mongoose",
+  cardImg: "./imgs/card4.jpg",
+},{
+  title: "Node.JS",
+  img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  text: "Node.JS",
+  cardImg: "./imgs/card4.jpg",
+},{
+  title: "Express.JS",
+  img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  text: "Express.JS",
+  cardImg: "./imgs/card11.jpg",
+},
+
+
+{
+  title: "JWT",
+  img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/json/json-original.svg",
+  text: "JWT",
+  cardImg: "./imgs/card8.jpg",
+},
+{
+  title: "REST API",
+  img: "https://cdn-icons-png.flaticon.com/512/2165/2165004.png",
+  text: "REST API",
+  cardImg: "./imgs/card5.jpg",
+},
+{
+  title: "Socket.IO",
+  img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg",
+  text: "Socket.IO",
+  cardImg: "./imgs/card4.jpg",
+},
+{
+  title: "Auth",
+  img: "https://cdn-icons-png.flaticon.com/512/3064/3064197.png",
+  text: "Authentication",
+  cardImg: "./imgs/card6.jpg",
+},{
+  title: "Postman",
+  img: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
+  text: "Postman",
+  cardImg: "./imgs/card5.jpg",
+},
+{
+  title: "Git",
+  img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  text: "Git",
+  cardImg: "./imgs/card5.jpg",
+},
     {
       title: "GitHub",
       img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
       text: "GitHub",
       cardImg: "./imgs/card11.jpg",
     },
-    {
-      title: "SQL",
-      img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-      text: "SQL",
-      cardImg: "./imgs/card5.jpg",
-    },
-    {
-      title: "Python",
-      img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-      text: "Python",
-      cardImg: "./imgs/card1.jpg",
-    },
-    {
-      title: "C++",
-      img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-      text: "C++",
-      cardImg: "./imgs/card2.jpg",
-    },
+{
+  title: "Vercel",
+  img: "https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png",
+  text: "Vercel",
+  cardImg: "./imgs/card11.jpg",
+},{
+  title: "Railway",
+  img: "https://railway.app/brand/logo-light.png",
+  text: "Railway",
+  cardImg: "./imgs/card10.jpg",
+}
   ]);
 
   const [social] = useState([
