@@ -128,7 +128,7 @@ function CardsProvider({ children }) {
         img: "/imgs/cv.jpg",
         text: "Click to Download the CV",
         cardImg: "./imgs/card2.jpg",
-        URL: "https://drive.google.com/uc?id=18_ffdEgHooDPLtbjLEKOCgnqSuY3Nthe&export=download",
+        URL: "https://drive.google.com/file/d/1O3iZQFvfcYw4EbAwBTpZImXJisXFDjzw/view?usp=sharing",
         desc: " Click on the card to download my CV",
       },
     ]);
