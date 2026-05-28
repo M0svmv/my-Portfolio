@@ -13,7 +13,7 @@ function Character() {
         <div className="text text-center position-absolute top-0">
           <TypingEffect
             text={
-              "W elcome to my portfolio!!. I'm Mohamed Osama, a front-end developer. Click anywhere to dismiss this screen, and choose any card to start playing!!"
+              "W elcome to my portfolio!!. I'm Mohamed Osama, a MERN-Stack developer. Click anywhere to dismiss this screen, and choose any card to start playing!!"
             }
             speed={70}
           />
