@@ -78,7 +78,7 @@ export default function CardSwiper() {
               />
               <p className="hidden-card-text position-absolute text-center text-black ">
                 {card.text ||
-                  "Hello, I'm Mohammed Osama, a Front-End Developer."}
+                  "Hello, I'm Mohammed Osama, a MERN-Stack Developer."}
               </p>
             </div>
           </SwiperSlide>
