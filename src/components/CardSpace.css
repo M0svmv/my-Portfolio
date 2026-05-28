@@ -1,6 +1,6 @@
 .square-div {
   background-image: url("../../public/imgs/cardSpace1.png");
-  width: 120px; /* Set your desired size */
+  width: 120px; 
   height: 120px;
-  border: 1px solid black; /* Optional border for visibility */
+  border: 1px solid black; 
 }
