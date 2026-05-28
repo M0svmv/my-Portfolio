@@ -35,12 +35,6 @@ function CardsProvider({ children }) {
       cardImg: "./imgs/card6.jpg",
     },
     {
-      title: "TypeScript",
-      img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-      text: "TypeScript",
-      cardImg: "./imgs/card2.jpg",
-    },
-    {
       title: "React.JS",
       img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       text: "React.JS",
@@ -63,12 +57,6 @@ function CardsProvider({ children }) {
       img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
       text: "Python",
       cardImg: "./imgs/card1.jpg",
-    },
-    {
-      title: "PHP",
-      img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-      text: "PHP",
-      cardImg: "./imgs/card3.jpg",
     },
     {
       title: "C++",
@@ -189,12 +177,12 @@ function CardsProvider({ children }) {
     {
       title: "Mohammed Osama",
       img: profile,
-      text: "I'm Mohammed Osama, a Frontend developer.",
+      text: "I'm Mohammed Osama, a MERN Stack developer.",
       cardImg: "./imgs/card6.jpg",
       handleCards: () => handleCvUpdate(),
       handleSwiper: () => handleCvUpdate(),
       
-      desc: `As a computer engineering student interested in several areas, particularly web development and AI.`,
+      desc: `As a computer engineer interested in several areas, particularly web development and AI.`,
     },
     {
       title: "My Skills",
