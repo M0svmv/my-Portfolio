@@ -53,6 +53,29 @@ Vercel ← المشروع ← **Settings** ← **Environment Variables** ← ض�
 
 ---
 
+## تغيير الدومين لاسم أحلى (مجاناً)
+
+Vercel بيدي دومين زي `my-portfolio-xxxx.vercel.app`. تقدر تخليه أي اسم `.vercel.app` لسه محدش أخده:
+
+1. Vercel ← المشروع ← **Settings** ← **Domains** ← **Add Domain**
+2. اكتب الاسم اللي عايزه، مثلاً:
+   - `mohamed-osama.vercel.app` ← (الأنضف)
+   - `mohamedosama.vercel.app`
+   - `mohamed-osama-dev.vercel.app`
+   - `osama-dev.vercel.app`
+
+   Vercel هيقولك على طول لو الاسم متاح.
+3. بعد ما يتضاف، خليه هو الأساسي، وخلي الدومين القديم يعمل **Redirect** عليه.
+4. **مهم:** في GitHub ← OAuth App بتاع الـ CMS، غيّر:
+   - **Homepage URL** ← الدومين الجديد
+   - **Authorization callback URL** ← `https://<الدومين-الجديد>/api/callback`
+5. اعمل **Redeploy** — صورة المشاركة والـ links في الموقع بتاخد الدومين الجديد لوحدها (مفيش حاجة تتعدل في الكود).
+
+> عايز دومين خاص زي `mohamedosama.dev` أو `.com`؟ بيتشتري (حوالي 10–15$ في السنة من Namecheap / Cloudflare / Porkbun)،
+> وبعدين تضيفه بنفس الطريقة من **Domains** وVercel يقولك تحط أنهي DNS records.
+
+---
+
 ## تعديل محلي (من غير لوجين)
 
 ```bash
