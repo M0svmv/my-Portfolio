@@ -9,7 +9,27 @@
   </head>
   <body>
     <!-- Decap CMS: a free, open-source, Git-based content manager.
-         Edits are saved as commits to src/content/*.json on GitHub, and Netlify rebuilds the site. -->
+         Edits are saved as commits to src/content/*.json on GitHub, and Vercel redeploys the site. -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
     <script src="https://unpkg.com/decap-cms@^3.6.0/dist/decap-cms.js"></script>
+    <script>
+      // The GitHub login runs on this same site (/api/auth on Vercel), so whatever domain
+      // the admin is opened on is the one it logs in through. config.yml supplies the rest.
+      CMS.init({
+        config: {
+          backend: {
+            name: "github",
+            repo: "M0svmv/my-Portfolio",
+            branch: "main",
+            base_url: window.location.origin,
+            auth_endpoint: "api/auth",
+          },
+          site_url: window.location.origin,
+          display_url: window.location.origin,
+        },
+      });
+    </script>
   </body>
 </html>

@@ -1,18 +1,16 @@
 # Content manager for the portfolio (Decap CMS — free & open source).
 # Open https://<your-site>/admin to edit. Every save is a commit to src/content/*.json,
-# and Netlify rebuilds the site automatically. See CMS-SETUP.md for the one-time setup.
+# and Vercel redeploys the site automatically. See CMS-SETUP.md for the one-time setup.
 
 backend:
   name: github
   repo: M0svmv/my-Portfolio
   branch: main
-  # Login uses Netlify's free GitHub OAuth service (set up once in the Netlify dashboard).
+  # Login goes through /api/auth on this site (Vercel function). base_url is set in admin/index.html.
 
 # When you run "npm run cms" locally, the admin edits your local files instead (no login needed).
 local_backend: true
 
-site_url: https://mohamedosama3000.netlify.app
-display_url: https://mohamedosama3000.netlify.app
 logo_url: /favicon.png
 
 media_folder: public/img/uploads
