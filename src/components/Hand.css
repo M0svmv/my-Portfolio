@@ -1,0 +1,52 @@
+.hand {
+  position: relative;
+  z-index: 2;
+  height: calc(var(--hw) * 1.43 * 0.6);
+  pointer-events: none;
+}
+
+.hand__card {
+  all: unset;
+  pointer-events: auto;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: var(--hw);
+  margin-left: calc(var(--hw) / -2);
+  cursor: pointer;
+  border-radius: calc(var(--hw) * 0.05);
+  transform-origin: 50% 110%;
+  -webkit-tap-highlight-color: transparent;
+}
+.hand__card:focus-visible {
+  outline: 3px solid var(--gold-2);
+  outline-offset: 4px;
+}
+
+.hand__glow {
+  position: absolute;
+  inset: -6px;
+  border-radius: calc(var(--hw) * 0.07);
+  pointer-events: none;
+  box-shadow:
+    0 0 0 2px var(--gold-2),
+    0 0 22px 6px rgb(255 205 90 / 0.65);
+  animation: glow-pulse 1.8s ease-in-out infinite;
+}
+@keyframes glow-pulse {
+  50% { box-shadow: 0 0 0 2px var(--gold-2), 0 0 34px 10px rgb(255 205 90 / 0.4); }
+}
+
+.opp-hand {
+  position: relative;
+  height: calc(var(--hw) * 0.42);
+  pointer-events: none;
+}
+.opp-hand__card {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: calc(var(--hw) * 0.62);
+  margin-left: calc(var(--hw) * -0.31);
+  transform-origin: 50% 50%;
+}

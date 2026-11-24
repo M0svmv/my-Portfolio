@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="400" viewBox="0 0 72 400">
+<rect x="3" y="0" width="66" height="400" fill="#5a3510" fill-opacity="0.07"/>
+<path d="M3 0V400M69 0V400" stroke="#5a3510" stroke-width="2" stroke-opacity="0.7"/>
+<path d="M8 0V400M64 0V400" stroke="#b8863b" stroke-width="1" stroke-opacity="0.8"/>
+<g transform="translate(0 4)" fill="none" stroke="#5a3510" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.8"><path d="M36 50C30 40 30 28 36 16C42 28 42 40 36 50Z"/><path d="M34 52C24 50 18 40 16 30C26 32 32 40 35 50"/><path d="M38 52C48 50 54 40 56 30C46 32 40 40 37 50"/><path d="M36 52V62M28 62H44"/></g>
+<path d="M12 76H60" stroke="#5a3510" stroke-width="1.5" stroke-opacity="0.5"/>
+<g transform="translate(0 84)" fill="none" stroke="#5a3510" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.8"><path d="M18 40Q36 24 54 40Q36 52 18 40Z"/><circle cx="36" cy="40" r="5" fill="#5a3510"/><path d="M19 30Q36 16 53 28"/><path d="M33 49L29 62M44 48Q50 56 47 62"/></g>
+<path d="M12 156H60" stroke="#5a3510" stroke-width="1.5" stroke-opacity="0.5"/>
+<g transform="translate(0 164)" fill="none" stroke="#5a3510" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.8"><path d="M16 28l5-6 5 6 5-6 5 6 5-6 5 6 5-6 5 6"/><path d="M16 40l5-6 5 6 5-6 5 6 5-6 5 6 5-6 5 6"/><path d="M16 52l5-6 5 6 5-6 5 6 5-6 5 6 5-6 5 6"/></g>
+<path d="M12 236H60" stroke="#5a3510" stroke-width="1.5" stroke-opacity="0.5"/>
+<g transform="translate(0 244)" fill="none" stroke="#5a3510" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.8"><path d="M28 62V24Q36 18 44 24V62"/><path d="M24 30H48M24 36H48M24 42H48M24 48H48"/><path d="M22 62H50"/></g>
+<path d="M12 316H60" stroke="#5a3510" stroke-width="1.5" stroke-opacity="0.5"/>
+<g transform="translate(0 324)" fill="none" stroke="#5a3510" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.8"><circle cx="36" cy="32" r="10"/><circle cx="36" cy="32" r="3" fill="#5a3510"/><path d="M14 58Q24 44 34 56M38 56Q48 44 58 58M12 60H60"/></g>
+<path d="M12 396H60" stroke="#5a3510" stroke-width="1.5" stroke-opacity="0.5"/>
+</svg>

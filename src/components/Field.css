@@ -1,0 +1,310 @@
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+
+/* One grid for both players:
+   columns = side zone | gap | 5 card zones | gap | side zone
+   rows    = opponent back row, opponent front row, centre line, your front row, your back row */
+.field__grid {
+  --side-gap: clamp(6px, 1.4vw, 24px);
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--fw) var(--side-gap) repeat(5, var(--fw)) var(--side-gap) var(--fw);
+  grid-template-rows: auto auto 3.2dvh auto auto;
+  gap: 1.1dvh clamp(5px, 0.8vw, 12px);
+  perspective: 1400px;
+}
+
+.field__divider {
+  position: absolute;
+  left: -4%;
+  right: -4%;
+  top: 50%;
+  height: 2px;
+  translate: 0 -50%;
+  background: linear-gradient(90deg, transparent, rgb(122 78 26 / 0.7) 15%, #e9c46a 50%, rgb(122 78 26 / 0.7) 85%, transparent);
+  pointer-events: none;
+}
+
+.zone {
+  position: relative;
+  width: var(--fw);
+  aspect-ratio: 7 / 10;
+  border-radius: calc(var(--fw) * 0.07);
+  /* sandstone tile, like the original card spaces */
+  border: 1.5px solid #4a2a0c;
+  background: url("/img/marble.webp") center / 260% auto, #eeb46a;
+  background-blend-mode: multiply;
+  box-shadow:
+    inset 0 0 calc(var(--fw) * 0.2) rgb(80 40 5 / 0.45),
+    0 2px 4px rgb(60 30 5 / 0.25);
+  perspective: 900px;
+}
+.zone--mine {
+  background-color: #f2bf7a;
+}
+.zone--side {
+  display: grid;
+  place-items: center;
+}
+
+/* zone name written faintly inside an empty side zone */
+.zone-watermark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(8px, calc(var(--fw) * 0.15), 15px);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgb(74 42 12 / 0.6);
+  writing-mode: vertical-rl;
+  rotate: 180deg;
+}
+
+/* small label badge on a deck stack */
+.zone-tag {
+  position: absolute;
+  left: 50%;
+  bottom: 6%;
+  translate: -50% 0;
+  z-index: 5;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(7px, calc(var(--fw) * 0.1), 11px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #fbe7b8;
+  background: rgb(40 20 5 / 0.8);
+  border: 1px solid rgb(233 196 106 / 0.6);
+}
+
+.side-stack {
+  --sx: -1;
+  --sy: -1;
+  position: relative;
+  width: var(--fw);
+  aspect-ratio: 7 / 10;
+}
+/* the opponent's piles lean the other way, as if seen from across the table */
+.side-stack.is-opp {
+  --sx: 1;
+  --sy: 1;
+}
+.side-stack__card {
+  position: absolute;
+  inset: 0;
+  translate: calc(var(--i) * var(--sx) * 2px) calc(var(--i) * var(--sy) * 3px);
+  transition: translate 0.3s ease;
+}
+.side-stack:hover .side-stack__card {
+  translate: calc(var(--i) * var(--sx) * 5px) calc(var(--i) * var(--sy) * 7px);
+}
+
+/* ───── Cards on the field ───── */
+
+.field-card {
+  all: unset;
+  position: absolute;
+  inset: 0;
+  display: block;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  -webkit-tap-highlight-color: transparent;
+}
+.field-card__flip {
+  transition: translate 0.25s ease, filter 0.25s ease;
+}
+.field-card:hover .field-card__flip,
+.field-card:focus-visible .field-card__flip {
+  translate: 0 -8%;
+  filter: drop-shadow(0 10px 14px rgb(0 0 0 / 0.45)) brightness(1.08);
+}
+.field-card:focus-visible {
+  outline: 3px solid var(--gold-2);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.field-card.is-selected::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: calc(var(--fw) * 0.09);
+  box-shadow: 0 0 0 2px var(--gold-2), 0 0 18px 4px rgb(255 205 90 / 0.7);
+  pointer-events: none;
+  animation: glow-pulse 1.8s ease-in-out infinite;
+}
+.field-card.is-placeholder {
+  cursor: progress;
+}
+.field-card.is-placeholder .field-card__flip {
+  animation: waiting 1.2s ease-in-out infinite;
+}
+@keyframes waiting {
+  50% { filter: brightness(1.35); }
+}
+
+/* ───── Hint, messages, summon burst ───── */
+
+.field-hint {
+  position: absolute;
+  left: 50%;
+  top: 74%;
+  translate: -50% -50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0.7rem 1.3rem;
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.85rem, 0.7rem + 0.4vw, 1.1rem);
+  color: #3a2410;
+  white-space: nowrap;
+  background: linear-gradient(#f8eccc, #e6d09b);
+  border: 2px solid #7a4e1a;
+  box-shadow: 0 10px 25px rgb(0 0 0 / 0.3);
+  pointer-events: none;
+  z-index: 3;
+}
+.field-hint__arrow {
+  font-size: 0.8em;
+  animation: nudge 1s ease-in-out infinite;
+}
+
+.field-message {
+  position: absolute;
+  left: 50%;
+  top: 74%;
+  translate: -50% -50%;
+  width: min(90%, 420px);
+  margin: 0;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  border-radius: 10px;
+  background: rgb(248 236 204 / 0.95);
+  border: 2px solid #7a4e1a;
+  color: #3a2410;
+  z-index: 3;
+}
+
+.summon-burst {
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  width: calc(var(--fw) * 3);
+  aspect-ratio: 1;
+  margin: calc(var(--fw) * -1.5) 0 0 calc(var(--fw) * -1.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 4;
+  background:
+    radial-gradient(circle, rgb(255 236 170 / 0.9) 0%, rgb(255 200 90 / 0.55) 25%, transparent 60%),
+    repeating-conic-gradient(rgb(255 220 130 / 0.5) 0 6deg, transparent 6deg 18deg);
+  mask-image: radial-gradient(circle, #000 25%, transparent 68%);
+  mix-blend-mode: screen;
+}
+
+.field {
+  position: relative;
+  z-index: 1;
+}
+
+/* winged sun behind the centre line */
+.winged-sun {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--fw) * 4.6);
+  translate: -50% -50%;
+  color: #6b4416;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+.winged-sun__disk {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sun-breathe 5s ease-in-out infinite;
+}
+@keyframes sun-breathe {
+  50% { opacity: 0.55; scale: 1.08; }
+}
+.field__grid > .zone,
+.field__grid > .side-stack { z-index: 1; }
+
+/* ───── Paging (decks bigger than one field) ───── */
+
+.page-btn {
+  all: unset;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.7rem;
+  color: #2a1808;
+  background: radial-gradient(circle at 35% 30%, #fff3c4, #e0b04b 55%, #8a5a18);
+  box-shadow: 0 0 0 1.5px #6b4416, 0 3px 8px rgb(0 0 0 / 0.3);
+  transition: scale 0.15s ease, opacity 0.2s ease;
+}
+.page-btn:hover:not(:disabled) {
+  scale: 1.12;
+}
+.page-btn:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+.page-btn:focus-visible {
+  outline: 3px solid var(--gold-2);
+  outline-offset: 2px;
+}
+.page-btn.is-nudging {
+  animation: page-nudge 1.4s ease-in-out infinite;
+}
+@keyframes page-nudge {
+  0%, 100% { box-shadow: 0 0 0 1.5px #6b4416, 0 3px 8px rgb(0 0 0 / 0.3); }
+  50% { box-shadow: 0 0 0 1.5px #6b4416, 0 0 0 7px rgb(255 205 90 / 0.5), 0 3px 8px rgb(0 0 0 / 0.3); }
+}
+
+.page-pill {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.15rem 0.25rem;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  color: #2a1808;
+  background: linear-gradient(#fbf0d2, #dcc185);
+  border: 1.5px solid #6b4416;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.3);
+}
+.page-pill__dots {
+  display: flex;
+  gap: 4px;
+}
+.page-pill__dots i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgb(107 68 22 / 0.35);
+  transition: background 0.2s ease, scale 0.2s ease;
+}
+.page-pill__dots i.is-on {
+  background: #6b4416;
+  scale: 1.3;
+}

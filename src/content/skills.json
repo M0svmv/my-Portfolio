@@ -1,0 +1,124 @@
+{
+  "skills": [
+    {
+      "title": "HTML",
+      "group": "Frontend",
+      "icon": "html",
+      "text": "Semantic, accessible page structure."
+    },
+    {
+      "title": "CSS",
+      "group": "Frontend",
+      "icon": "css",
+      "text": "Layouts, responsive design and animation."
+    },
+    {
+      "title": "Bootstrap",
+      "group": "Frontend",
+      "icon": "bootstrap",
+      "text": "Quick, consistent responsive UI."
+    },
+    {
+      "title": "JavaScript",
+      "group": "Frontend",
+      "icon": "javascript",
+      "text": "Modern ES features, async code and the DOM."
+    },
+    {
+      "title": "React",
+      "group": "Frontend",
+      "icon": "react",
+      "text": "Component-driven UIs with hooks and context."
+    },
+    {
+      "title": "Redux",
+      "group": "Frontend",
+      "icon": "redux",
+      "text": "Predictable global state for larger apps."
+    },
+    {
+      "title": "Node.js",
+      "group": "Backend",
+      "icon": "nodejs",
+      "text": "Server-side JavaScript and tooling."
+    },
+    {
+      "title": "Express",
+      "group": "Backend",
+      "icon": "express",
+      "text": "Routing, middleware and REST endpoints."
+    },
+    {
+      "title": "REST API",
+      "group": "Backend",
+      "icon": "rest",
+      "text": "Designing clean, resource-based APIs."
+    },
+    {
+      "title": "Socket.IO",
+      "group": "Backend",
+      "icon": "socketio",
+      "text": "Real-time, bidirectional communication."
+    },
+    {
+      "title": "JWT",
+      "group": "Backend",
+      "icon": "jwt",
+      "text": "Stateless, token-based sessions."
+    },
+    {
+      "title": "Auth",
+      "group": "Backend",
+      "icon": "auth",
+      "text": "Sign-up, login, hashing and protected routes."
+    },
+    {
+      "title": "SQL",
+      "group": "Database",
+      "icon": "mysql",
+      "text": "Relational schemas and queries."
+    },
+    {
+      "title": "MongoDB",
+      "group": "Database",
+      "icon": "mongodb",
+      "text": "Document data modelling and aggregation."
+    },
+    {
+      "title": "Mongoose",
+      "group": "Database",
+      "icon": "mongoose",
+      "text": "Schemas, validation and models on MongoDB."
+    },
+    {
+      "title": "Git",
+      "group": "Tools",
+      "icon": "git",
+      "text": "Branching, history and clean commits."
+    },
+    {
+      "title": "GitHub",
+      "group": "Tools",
+      "icon": "github",
+      "text": "Collaboration, reviews and hosting code."
+    },
+    {
+      "title": "Postman",
+      "group": "Tools",
+      "icon": "postman",
+      "text": "Testing and documenting APIs."
+    },
+    {
+      "title": "Vercel",
+      "group": "Tools",
+      "icon": "vercel",
+      "text": "Deploying frontends in seconds."
+    },
+    {
+      "title": "Railway",
+      "group": "Tools",
+      "icon": "railway",
+      "text": "Hosting Node services and databases."
+    }
+  ]
+}

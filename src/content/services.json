@@ -1,0 +1,37 @@
+{
+  "services": [
+    {
+      "title": "Frontend development",
+      "icon": "sparkles",
+      "text": "Responsive, accessible interfaces in React — component-driven, fast and pleasant to use.",
+      "tags": [
+        "React",
+        "Redux",
+        "JavaScript",
+        "CSS"
+      ]
+    },
+    {
+      "title": "Backend & APIs",
+      "icon": "server",
+      "text": "REST APIs with Node.js and Express, authentication with JWT and real-time features with Socket.IO.",
+      "tags": [
+        "Node.js",
+        "Express",
+        "JWT",
+        "Socket.IO"
+      ]
+    },
+    {
+      "title": "Full-stack delivery",
+      "icon": "layers",
+      "text": "From the MongoDB schema to the deployed app — wiring the whole stack together and shipping it.",
+      "tags": [
+        "MongoDB",
+        "Mongoose",
+        "Vercel",
+        "Railway"
+      ]
+    }
+  ]
+}

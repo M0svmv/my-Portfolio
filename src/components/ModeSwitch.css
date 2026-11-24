@@ -1,0 +1,56 @@
+.mode-switch {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  border-radius: 999px;
+  background: rgb(10 6 3 / 0.75);
+  border: 1px solid rgb(224 176 75 / 0.45);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.35);
+  backdrop-filter: blur(6px);
+}
+
+.mode-switch__opt {
+  all: unset;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.85rem;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgb(243 230 196 / 0.7);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.mode-switch__opt > svg,
+.mode-switch__opt > span:not(.mode-switch__thumb) {
+  position: relative;
+  z-index: 1;
+}
+.mode-switch__opt:hover {
+  color: #fff3d6;
+}
+.mode-switch__opt.is-on {
+  color: #1a1007;
+  cursor: default;
+}
+.mode-switch__opt:focus-visible {
+  outline: 2px solid var(--gold-2);
+  outline-offset: 2px;
+}
+
+.mode-switch__thumb {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: linear-gradient(#ffe39a, #d9a441);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.3);
+}
+
+.mode-switch.is-compact .mode-switch__opt {
+  padding: 0.45rem 0.6rem;
+  font-size: 0.9rem;
+}

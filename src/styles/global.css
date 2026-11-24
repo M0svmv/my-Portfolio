@@ -1,0 +1,240 @@
+:root {
+  --font-display: "Cinzel", "Trajan Pro", Georgia, serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ink: #2a1a0c;
+  --papyrus: #f3e6c4;
+  --gold: #d4a944;
+  --gold-2: #ffd56a;
+  --bronze: #8a5a22;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: #120b06;
+  color: var(--papyrus);
+  -webkit-font-smoothing: antialiased;
+}
+/* the card game is a fixed full-screen table; the professional page scrolls */
+html[data-view="game"] body {
+  overflow: hidden;
+}
+html[data-view="pro"] {
+  scroll-behavior: smooth;
+}
+
+.game-switch {
+  position: fixed;
+  top: 44px;
+  right: 50px;
+  z-index: 30;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ───── Layout ───── */
+
+.app {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.app--desktop {
+  display: grid;
+  grid-template-columns: clamp(300px, 26vw, 440px) 1fr;
+}
+
+.app--compact {
+  display: flex;
+  flex-direction: column;
+}
+
+.board {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 0;
+  container-type: size;
+  --fw: min(11.2cqw, 11.2cqh);
+  --hw: calc(var(--fw) * 1.45);
+  /* papyrus sheet with hieroglyph columns on both sides */
+  background:
+    radial-gradient(ellipse at 50% 50%, transparent 50%, rgb(90 50 10 / 0.32) 100%),
+    radial-gradient(ellipse 45% 40% at 50% 50%, rgb(255 248 225 / 0.55), transparent 70%),
+    url("/img/pillar.svg") left 46px top 0 / 60px auto repeat-y,
+    url("/img/pillar.svg") right 46px top 0 / 60px auto repeat-y,
+    repeating-linear-gradient(90deg, rgb(120 80 30 / 0.035) 0 1px, transparent 1px 7px, rgb(120 80 30 / 0.025) 7px 9px, transparent 9px 17px),
+    repeating-linear-gradient(0deg, rgb(120 80 30 / 0.025) 0 2px, transparent 2px 13px, rgb(120 80 30 / 0.02) 13px 14px, transparent 14px 23px),
+    url("/img/marble.webp") center / cover no-repeat,
+    #f0ddae;
+  background-blend-mode: normal, normal, normal, normal, normal, normal, multiply;
+}
+/* carved frame: rosette corners and lotus borders */
+.board::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 36px solid transparent;
+  border-image: url("/img/frame.svg") 48 round;
+  filter: drop-shadow(0 0 6px rgb(60 30 5 / 0.35));
+  z-index: 0;
+}
+.board::after {
+  /* warm light from above */
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(55% 40% at 50% 0%, rgb(255 220 150 / 0.14), transparent 70%);
+}
+
+.topbar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 4vw calc(0.7rem);
+  padding-top: max(0.7rem, env(safe-area-inset-top));
+  background: linear-gradient(#22160c, #150d07);
+  border-bottom: 3px solid #b8863b;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.45);
+}
+.topbar__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  background: linear-gradient(180deg, #fff1c2, #e3b04f 60%, #a8742b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.topbar__role {
+  margin: 0;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgb(243 230 196 / 0.7);
+}
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.topbar .social {
+  gap: 0.45rem;
+}
+.topbar .social__link {
+  width: 34px;
+  height: 34px;
+  font-size: 0.95rem;
+}
+@media (max-width: 420px) {
+  .topbar .social__link:nth-child(3) {
+    display: none;
+  }
+}
+
+.kbd-hint {
+  position: fixed;
+  right: 26px;
+  bottom: 20px;
+  margin: 0;
+  font-size: 0.72rem;
+  color: rgb(74 44 14 / 0.7);
+  pointer-events: none;
+  z-index: 3;
+}
+.app--compact .kbd-hint {
+  display: none;
+}
+
+/* ───── Typewriter ───── */
+
+.typewriter {
+  white-space: pre-line;
+}
+.typewriter__caret {
+  display: inline-block;
+  width: 0.08em;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -0.12em;
+  background: currentColor;
+  opacity: 0;
+}
+.typewriter__caret.is-typing {
+  opacity: 0.8;
+  animation: caret 0.8s steps(1) infinite;
+}
+@keyframes caret {
+  50% { opacity: 0; }
+}
+
+/* ───── Ambient dust ───── */
+
+.dust {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.app--compact .dust {
+  position: fixed;
+}
+.dust span {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff4c8, rgb(255 210 110 / 0.6) 50%, transparent 70%);
+  opacity: 0;
+  animation: rise linear infinite;
+}
+@keyframes rise {
+  0% { translate: 0 0; opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.5; }
+  100% { translate: var(--drift) -105dvh; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dust,
+  .intro__halo {
+    display: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

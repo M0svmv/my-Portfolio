@@ -1,0 +1,142 @@
+.howto-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(5 8 15 / 0.7);
+  backdrop-filter: blur(3px);
+  perspective: 1000px;
+}
+
+.howto {
+  position: relative;
+  width: min(460px, 100%);
+  max-height: 90dvh;
+  overflow-y: auto;
+  padding: 1.6rem 1.4rem 1.3rem;
+  border-radius: 16px;
+  color: var(--ink);
+  background:
+    radial-gradient(120% 120% at 0% 0%, rgb(255 255 255 / 0.55), transparent 50%),
+    linear-gradient(#f7ecd0, #e5cf98);
+  border: 3px solid #7a4e1a;
+  box-shadow: 0 0 0 6px rgb(26 15 6 / 0.85), 0 0 0 8px #c99a45, 0 30px 60px rgb(0 0 0 / 0.5);
+}
+
+.howto__title {
+  margin: 0 0 1rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: #3a2410;
+}
+
+.howto__close {
+  all: unset;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #6b4416;
+  cursor: pointer;
+}
+.howto__close:hover,
+.howto__close:focus-visible {
+  background: rgb(107 68 22 / 0.12);
+}
+
+.howto__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+.howto__steps li {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 0.8rem;
+  align-items: start;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.howto__steps strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: #2a1808;
+}
+
+.howto__icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 1.15rem;
+  color: #2a1808;
+  background: radial-gradient(circle at 35% 30%, #fff3c4, #e0b04b 55%, #8a5a18);
+  box-shadow: 0 0 0 2px #6b4416, 0 4px 10px rgb(0 0 0 / 0.25);
+}
+.howto__icon b {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 0.72rem;
+  color: #fff3d0;
+  background: #6b4416;
+  border: 1.5px solid #f2cf78;
+}
+
+.howto__tip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+  font-size: 0.8rem;
+  color: #6b4416;
+}
+
+.howto__go {
+  width: 100%;
+  justify-content: center;
+  margin-top: 1.1rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.help-btn {
+  all: unset;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  flex: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #f3d58a;
+  border: 1.5px solid rgb(217 174 85 / 0.7);
+  background: rgb(255 255 255 / 0.06);
+  transition: background 0.2s ease, scale 0.2s ease;
+}
+.help-btn:hover,
+.help-btn:focus-visible {
+  background: rgb(217 174 85 / 0.2);
+  scale: 1.08;
+}

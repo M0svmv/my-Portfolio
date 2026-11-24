@@ -1,0 +1,148 @@
+# Content manager for the portfolio (Decap CMS — free & open source).
+# Open https://<your-site>/admin to edit. Every save is a commit to src/content/*.json,
+# and Netlify rebuilds the site automatically. See CMS-SETUP.md for the one-time setup.
+
+backend:
+  name: github
+  repo: M0svmv/my-Portfolio
+  branch: main
+  # Login uses Netlify's free GitHub OAuth service (set up once in the Netlify dashboard).
+
+# When you run "npm run cms" locally, the admin edits your local files instead (no login needed).
+local_backend: true
+
+site_url: https://mohamedosama3000.netlify.app
+display_url: https://mohamedosama3000.netlify.app
+logo_url: /favicon.png
+
+media_folder: public/img/uploads
+public_folder: /img/uploads
+
+collections:
+  - name: content
+    label: Portfolio content
+    editor:
+      preview: false
+    files:
+      - name: profile
+        label: Profile & page text
+        file: src/content/profile.json
+        format: json
+        fields:
+          - { label: "Full name", name: "name", widget: "string" }
+          - { label: "First name", name: "firstName", widget: "string", hint: "Used on the card game's intro screen" }
+          - { label: "Role / title", name: "role", widget: "string" }
+          - { label: "Photo", name: "photo", widget: "image", hint: "A square-ish photo works best" }
+          - { label: "Short bio", name: "bio", widget: "text", hint: "Shown in the hero, the About section and the card game" }
+          - label: "More About paragraphs"
+            name: "about"
+            widget: "list"
+            field: { label: "Paragraph", name: "text", widget: "text" }
+          - label: "Quick facts (About section)"
+            name: "facts"
+            widget: "list"
+            summary: "{{fields.label}}: {{fields.value}}"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value", name: "value", widget: "string" }
+          - label: "Rotating phrases in the hero (I build ...)"
+            name: "heroRoles"
+            widget: "list"
+            field: { label: "Phrase", name: "text", widget: "string" }
+          - { label: "Show the green open-to-work badge", name: "openToWork", widget: "boolean", default: true }
+          - { label: "Badge text", name: "statusText", widget: "string", required: false }
+          - { label: "Contact section text", name: "contactText", widget: "text" }
+          - { label: "CV link", name: "cvUrl", widget: "string", hint: "A Google Drive or PDF link" }
+          - { label: "GitHub username", name: "githubUser", widget: "string", hint: "Projects are loaded from this account" }
+          - { label: "Card game intro text", name: "gameIntro", widget: "text" }
+
+      - name: skills
+        label: Skills
+        file: src/content/skills.json
+        format: json
+        fields:
+          - label: "Skills"
+            name: "skills"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.group}})"
+            fields:
+              - { label: "Name", name: "title", widget: "string" }
+              - { label: "Group", name: "group", widget: "select", options: ["Frontend", "Backend", "Database", "Tools"] }
+              - { label: "Icon", name: "icon", widget: "select", hint: "Pick the icon to show", options: ["html", "css", "javascript", "typescript", "react", "nextjs", "redux", "tailwind", "bootstrap", "sass", "vite", "angular", "vue", "svelte", "framer", "nodejs", "express", "nestjs", "socketio", "jwt", "graphql", "rest", "auth", "python", "django", "php", "cpp", "stripe", "mongodb", "mongoose", "mysql", "postgresql", "firebase", "supabase", "redis", "prisma", "database", "git", "github", "postman", "docker", "vercel", "netlify", "railway", "figma", "jest", "npm", "linux", "leetcode", "code", "server", "mobile", "design", "ai", "brain", "cloud", "web", "sparkles", "layers", "rocket", "accessibility", "performance", "linkedin", "github-social", "email", "facebook", "instagram", "x", "youtube", "whatsapp", "telegram", "behance", "dribbble", "discord", "medium", "devto", "link"] }
+              - { label: "Icon color (optional)", name: "color", widget: "color", required: false, hint: "Leave empty to use the icon's default color" }
+              - { label: "One-line description", name: "text", widget: "string" }
+
+      - name: services
+        label: Services (What I can do for you)
+        file: src/content/services.json
+        format: json
+        fields:
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "select", hint: "Pick the icon to show", options: ["html", "css", "javascript", "typescript", "react", "nextjs", "redux", "tailwind", "bootstrap", "sass", "vite", "angular", "vue", "svelte", "framer", "nodejs", "express", "nestjs", "socketio", "jwt", "graphql", "rest", "auth", "python", "django", "php", "cpp", "stripe", "mongodb", "mongoose", "mysql", "postgresql", "firebase", "supabase", "redis", "prisma", "database", "git", "github", "postman", "docker", "vercel", "netlify", "railway", "figma", "jest", "npm", "linux", "leetcode", "code", "server", "mobile", "design", "ai", "brain", "cloud", "web", "sparkles", "layers", "rocket", "accessibility", "performance", "linkedin", "github-social", "email", "facebook", "instagram", "x", "youtube", "whatsapp", "telegram", "behance", "dribbble", "discord", "medium", "devto", "link"] }
+              - { label: "Description", name: "text", widget: "text" }
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                field: { label: "Tag", name: "tag", widget: "string" }
+
+      - name: socials
+        label: Contact links
+        file: src/content/socials.json
+        format: json
+        fields:
+          - label: "Links"
+            name: "socials"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "ID (short, unique, no spaces)", name: "id", widget: "string" }
+              - { label: "Name", name: "title", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "select", hint: "e.g. linkedin, github-social, email, x, whatsapp", options: ["html", "css", "javascript", "typescript", "react", "nextjs", "redux", "tailwind", "bootstrap", "sass", "vite", "angular", "vue", "svelte", "framer", "nodejs", "express", "nestjs", "socketio", "jwt", "graphql", "rest", "auth", "python", "django", "php", "cpp", "stripe", "mongodb", "mongoose", "mysql", "postgresql", "firebase", "supabase", "redis", "prisma", "database", "git", "github", "postman", "docker", "vercel", "netlify", "railway", "figma", "jest", "npm", "linux", "leetcode", "code", "server", "mobile", "design", "ai", "brain", "cloud", "web", "sparkles", "layers", "rocket", "accessibility", "performance", "linkedin", "github-social", "email", "facebook", "instagram", "x", "youtube", "whatsapp", "telegram", "behance", "dribbble", "discord", "medium", "devto", "link"] }
+              - { label: "Link", name: "url", widget: "string", hint: "A full URL, or mailto:you@example.com for email" }
+              - { label: "Short text (on the card)", name: "text", widget: "string" }
+              - { label: "Longer description", name: "desc", widget: "string" }
+              - { label: "Show as a quick-link icon in the header", name: "quickLink", widget: "boolean", default: false }
+
+      - name: projects
+        label: Projects
+        file: src/content/projects.json
+        format: json
+        fields:
+          - { label: "Load my public GitHub repositories", name: "showGithub", widget: "boolean", default: true }
+          - { label: "Maximum number of GitHub projects", name: "maxProjects", widget: "number", value_type: "int", min: 1, max: 100, default: 60 }
+          - label: "Hide these repositories"
+            name: "hide"
+            widget: "list"
+            hint: "Repository names exactly as on GitHub, e.g. new-portfolio"
+            field: { label: "Repository name", name: "repo", widget: "string" }
+          - label: "Pin to the top (in this order)"
+            name: "pin"
+            widget: "list"
+            field: { label: "Repository name", name: "repo", widget: "string" }
+          - label: "Customise a GitHub project"
+            name: "overrides"
+            widget: "list"
+            summary: "{{fields.repo}}"
+            fields:
+              - { label: "Repository name", name: "repo", widget: "string" }
+              - { label: "Display title", name: "title", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Live demo URL", name: "liveUrl", widget: "string", required: false }
+          - label: "Extra projects (added by hand)"
+            name: "extra"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Main language", name: "language", widget: "string", required: false, hint: "e.g. JavaScript, TypeScript, Python" }
+              - { label: "Live demo URL", name: "liveUrl", widget: "string", required: false }
+              - { label: "Source code URL", name: "repoUrl", widget: "string", required: false }
+              - { label: "Show before the GitHub projects", name: "featured", widget: "boolean", default: false }

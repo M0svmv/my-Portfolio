@@ -1,0 +1,40 @@
+{
+  "name": "Mohamed Osama",
+  "firstName": "Mohamed",
+  "role": "MERN-Stack Developer",
+  "githubUser": "m0svmv",
+  "photo": "/img/photo.webp",
+  "bio": "Computer engineer interested in many areas — especially web development and AI. I build full-stack web apps with MongoDB, Express, React and Node.js.",
+  "about": [
+    "I care about clean, accessible interfaces on the front end and simple, well-structured APIs on the back end — and I like shipping things people can actually use."
+  ],
+  "facts": [
+    {
+      "label": "Focus",
+      "value": "Full-stack web development"
+    },
+    {
+      "label": "Stack",
+      "value": "MongoDB · Express · React · Node.js"
+    },
+    {
+      "label": "Background",
+      "value": "Computer engineering"
+    },
+    {
+      "label": "Curious about",
+      "value": "AI and real-time apps"
+    }
+  ],
+  "heroRoles": [
+    "full-stack web apps",
+    "fast REST APIs",
+    "real-time features",
+    "clean, responsive UIs"
+  ],
+  "openToWork": true,
+  "statusText": "Open to new opportunities",
+  "contactText": "Open to full-time roles, freelance work and collaboration. The fastest way to reach me is email.",
+  "cvUrl": "https://drive.google.com/file/d/1O3iZQFvfcYw4EbAwBTpZImXJisXFDjzw/view?usp=sharing",
+  "gameIntro": "Welcome to my portfolio! I'm Mohamed Osama, a MERN-Stack developer. This table is my deck — play a card from your hand to explore my skills, projects and how to reach me."
+}

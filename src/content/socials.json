@@ -1,0 +1,49 @@
+{
+  "socials": [
+    {
+      "id": "linkedin",
+      "title": "LinkedIn",
+      "icon": "linkedin",
+      "url": "https://www.linkedin.com/in/mohamed-osama3000/",
+      "text": "Connect with me professionally.",
+      "desc": "My professional profile — experience, education and what I'm working on.",
+      "quickLink": true
+    },
+    {
+      "id": "github",
+      "title": "GitHub",
+      "icon": "github-social",
+      "url": "https://github.com/m0svmv",
+      "text": "Browse all of my code.",
+      "desc": "Every project I've pushed, from experiments to full-stack apps.",
+      "quickLink": true
+    },
+    {
+      "id": "email",
+      "title": "Email",
+      "icon": "email",
+      "url": "mailto:medoosama822@gmail.com",
+      "text": "medoosama822@gmail.com",
+      "desc": "The fastest way to reach me about work, freelance or collaboration.",
+      "quickLink": true
+    },
+    {
+      "id": "facebook",
+      "title": "Facebook",
+      "icon": "facebook",
+      "url": "https://www.facebook.com/MOsvmv17",
+      "text": "Say hi on Facebook.",
+      "desc": "Find me on Facebook.",
+      "quickLink": false
+    },
+    {
+      "id": "instagram",
+      "title": "Instagram",
+      "icon": "instagram",
+      "url": "https://www.instagram.com/m.osama_17/",
+      "text": "Follow along on Instagram.",
+      "desc": "Find me on Instagram.",
+      "quickLink": false
+    }
+  ]
+}
